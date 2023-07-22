@@ -1,5 +1,5 @@
 // what the cow, learn c
-// #TuxGang Zimzy x Kasey Calculator #CDemons #Rich #ACG #BLESSED
+// #TuxGang Zimzy x Kasey Calculator #CDemons #Rich #ACG #BLESSED #CertifiedProgrammer :100:
 #include <stdio.h>
 
 int Addition(number1, number2) {
