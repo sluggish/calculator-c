@@ -1,49 +1,50 @@
 // what the cow, learn c
 // #TuxGang Zimzy x Kasey Calculator #CDemons #Rich #ACG #BLESSED #CertifiedProgrammer :100:
+
 #include <stdio.h>
 
-int Addition(number1, number2) {
-  int sum = number1 + number2;
-  printf("%d + %d = %d", number1, number2, sum);
+void addition(int number1, int number2) {
+    printf("%d + %d = %d", number1, number2, number1 + number2);
 }
 
-int Subtraction(number1, number2) {
-  int sum = number1 - number2;
-  printf("%d - %d = %d", number1, number2, sum);
+void subtraction(int number1, int number2) {
+    printf("%d - %d = %d", number1, number2, number1 - number2);
 }
 
-int Multiplication(number1, number2) {
-  int sum = number1 * number2;
-  printf("%d * %d = %d", number1, number2, sum);
+void multiplication(int number1, int number2) {
+    printf("%d * %d = %d", number1, number2, number1 * number2);
 }
 
-int Division(number1, number2) {
-  int sum = number1 / number2;
-  printf("%d / %d = %d", number1, number2, sum);
-}
-
-int main(void) {
-  printf("\n\nCalculator. Meow.\n\nPick an option.\n\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n");
+void division(int number1, int number2) {
+      if(!number2) {
+        puts("Cannot divide by 0!");
+          return;
+    }
   
-  int option;
-  printf("Pick operation to use -> ");
-  scanf("%d", &option);
+      printf("%d / %d = %d", number1, number2, (int) (number1 / number2));
+}
 
-  int number1, number2;
-  printf("Please enter the first number you would like to use ->\t ");
-  scanf("%d", &number1);
+int main(void) {  
+      puts("\n\nCalculator. Meow.");
+  
+      char option = 0;
+      printf("Pick operation to use -> ");
+      scanf("%c", &option);
 
-  printf("Please enter the second number you would like to use ->\t");
-  scanf("%d", &number2);
+      int number1 = 0, number2 = 0;
+      printf("Please enter the first number you would like to use ->\t ");
+      scanf("%d", &number1);
 
-  if (option == 1) {
-    Addition(number1, number2);
-  } else if (option == 2) {
-    Subtraction(number1, number2);
-  } else if (option == 3) {
-    Multiplication(number1, number2);
-  } else if (option == 4) {
-    Division(number1, number2);
-  }
-  return 0;
+      printf("Please enter the second number you would like to use ->\t");
+      scanf("%d", &number2);
+
+      switch(option) {
+          case '+': addition(number1, number2);       break;
+          case '-': subtraction(number1, number2);    break;
+          case '*': multiplication(number1, number2); break;
+          case '/': division(number1, number2);       break;
+          default:  puts("Invalid operation!");       break;
+      }
+  
+      return 0;
 }
